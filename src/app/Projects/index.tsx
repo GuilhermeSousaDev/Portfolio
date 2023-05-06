@@ -5,6 +5,7 @@ import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import { projectsData } from "../../config/projectsData";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import ProjectBox from "../../components/MuiCustomComponents/ProjectBox";
 
 export default function Projects() {
   const isThemeDark = useAppSelector((state) => state.theme.default) === "dark";
@@ -13,23 +14,23 @@ export default function Projects() {
 
   const handleShowButton = (index: number) => {
     setButtonIndex(index);
-  }
+  };
 
   return (
     <Box>
+      
       <Typography
-        variant="h3"
         color="text.primary"
-        sx={{ textAlign: "center", mb: 5 }}
+        sx={{ textAlign: "center", mb: 5, fontSize: "48px" }}
       >
         Projects
       </Typography>
       <Divider />
       <Box
-        display="flex"
-        flexWrap="wrap"
-        justifyContent="center"
-        sx={{ bgcolor: "white", borderRadius: 3 }}
+        display="grid"
+        gap="1rem"
+        gridTemplateColumns="repeat(2, 1fr)"
+        sx={{ borderRadius: 3, mt: 5 }}
       >
         {projectsData.map((project, index) => (
           <Box
@@ -37,42 +38,9 @@ export default function Projects() {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
+            key={index}
           >
-            <Box
-              component="img"
-              key={index}
-              onMouseOver={() => handleShowButton(index)}
-              onMouseLeave={() => setButtonIndex(null)}
-              sx={{
-                width: 170,
-                height: 100,
-                borderRadius: 3,
-                border: "1px solid black",
-                boxShadow: "2px 2px 2px #151B21",
-                m: 5,
-                "&:hover": {
-                  cursor: "pointer",
-                  filter: `drop-shadow(2px 2px 2px ${
-                    isThemeDark ? "#5135F0" : "#E66D32"
-                  })`,
-                  boxShadow: "0px 0px 0px white",
-                  
-                },
-              }}
-              src={project.screenshot}
-            />
-            <Button
-              onMouseOver={() => handleShowButton(index)}
-              variant="contained"
-              sx={{ 
-                transform: "translateY(-105px)", 
-                width: 100, 
-                visibility: index === buttonIndex ? 'visible' : 'hidden',
-            }}
-            >
-              See
-            </Button>
-            
+            <ProjectBox project={project} />
           </Box>
         ))}
       </Box>

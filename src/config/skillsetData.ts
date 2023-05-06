@@ -133,11 +133,20 @@ export let skillset = {
             name: 'MySQL',
             url: 'https://dev.mysql.com/doc',
             icon: 'devicon-mysql-plain colored',
+            subskills: [
+                'Joins',
+                'Subquerys',
+                'Group By',
+            ]
         },
         {
             name: 'MongoDB',
             url: 'https://www.mongodb.com/docs',
             icon: 'devicon-mongodb-plain colored',
+            subskills: [
+                'MongoDB Cloud',
+                'Mongoose',
+            ]
         },
         {
             name: 'Redis',
