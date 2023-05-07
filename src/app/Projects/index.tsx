@@ -1,28 +1,16 @@
-import { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import Button from "@mui/material/Button";
 import { projectsData } from "../../config/projectsData";
-import { useAppSelector } from "../../hooks/useAppSelector";
 import ProjectBox from "../../components/MuiCustomComponents/ProjectBox";
+import { useTheme } from "@mui/material";
 
 export default function Projects() {
-  const isThemeDark = useAppSelector((state) => state.theme.default) === "dark";
-
-  const [buttonIndex, setButtonIndex] = useState<number | null>(null);
-
-  const handleShowButton = (index: number) => {
-    setButtonIndex(index);
-  };
+  const theme = useTheme();
 
   return (
     <Box>
-      
-      <Typography
-        color="text.primary"
-        sx={{ textAlign: "center", mb: 5, fontSize: "48px" }}
-      >
+      <Typography color="text.primary" sx={{ mb: 5, fontSize: "48px", textAlign: "center" }}>
         Projects
       </Typography>
       <Divider />
@@ -30,7 +18,15 @@ export default function Projects() {
         display="grid"
         gap="1rem"
         gridTemplateColumns="repeat(2, 1fr)"
-        sx={{ borderRadius: 3, mt: 5 }}
+        justifyContent="center"
+        sx={{
+          borderRadius: 3,
+          mt: 5,
+          [theme.breakpoints.down(750)]: {
+            display: "flex",
+            flexDirection: "column",
+          },
+        }}
       >
         {projectsData.map((project, index) => (
           <Box
