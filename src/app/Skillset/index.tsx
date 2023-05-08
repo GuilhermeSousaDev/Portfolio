@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import SkillsetBox from "../../components/MuiCustomComponents/SkillsetBox";
+import SkillsetBox from "../../components/SkillsetComponents/SkillsetBox";
 
 export default function Skillset() {
   return (

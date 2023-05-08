@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import { projectsData } from "../../config/projectsData";
-import ProjectBox from "../../components/MuiCustomComponents/ProjectBox";
+import ProjectBox from "../../components/ProjectsComponents/ProjectBox";
 import { useTheme } from "@mui/material";
 
 export default function Projects() {
