@@ -2,7 +2,7 @@ export const projectsData = [
     {
         name: 'Fullstack News',
         url: 'https://fullstack-news.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/Fullstack_Project_Frontend',
         description: 'Write and Read News',
         screenshot: 'https://screenshot-proxy.netlify.app/f_avif,w_204/https://d33wubrfki0l68.cloudfront.net/64405835522a9e32b2bbdd1a/screenshot_2023-04-19-21-08-08-0000.png',
         createdAt: 2023,
@@ -10,7 +10,7 @@ export const projectsData = [
     {
         name: 'Watari',
         url: 'http://watari.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/watari',
         description: 'Make a question by voice',
         screenshot: 'https://screenshot-proxy.netlify.app/f_avif,w_204/https://d33wubrfki0l68.cloudfront.net/643dbec80ae84200aff0fb76/screenshot_2023-04-17-21-48-59-0000.png',
         createdAt: 2023,
@@ -18,7 +18,7 @@ export const projectsData = [
     {
         name: 'Vue Stock Trader',
         url: 'https://vuestocktrader.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/Learning-Vue/tree/main/Modulo-13/challenges/stock_trader',
         description: 'Sell and Buy fake actions',
         screenshot: 'https://screenshot-proxy.netlify.app/f_avif,w_204/https://d33wubrfki0l68.cloudfront.net/63530514bb9c3e007c31afef/screenshot_2022-10-21-20-46-19-0000.png',
         createdAt: 2022,
@@ -26,7 +26,7 @@ export const projectsData = [
     {
         name: 'Random Questions Math',
         url: 'https://randomath.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/Random-Question-Math',
         description: 'Resolve Math Questions',
         screenshot: 'https://screenshot-proxy.netlify.app/f_jpg,w_204/https://d33wubrfki0l68.cloudfront.net/643e9f123546976fab4239a7/screenshot_2023-04-18-13-45-58-0000.png',
         createdAt: 2022,
@@ -34,7 +34,7 @@ export const projectsData = [
     {
         name: 'Fast News',
         url: 'https://fastnewss.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/FastNews',
         description: 'Fast News about music, politic and more',
         screenshot: 'https://screenshot-proxy.netlify.app/f_jpg,w_204/https://d33wubrfki0l68.cloudfront.net/60ec2d3d584ad64b3ccb634c/screenshot_2021-07-12-11-53-34-0000.png',
         createdAt: 2022,
@@ -42,7 +42,7 @@ export const projectsData = [
     {
         name: 'Animes List',
         url: 'https://animeslist.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/Animes-List',
         description: 'It is a Anime List API Data',
         screenshot: 'https://screenshot-proxy.netlify.app/f_jpg,w_204/https://d33wubrfki0l68.cloudfront.net/60e356124dd64e9dd51ef088/screenshot_2021-07-05-18-57-24-0000.png',
         createdAt: 2022,
@@ -58,7 +58,7 @@ export const projectsData = [
     {
         name: 'Math Calc',
         url: 'https://mathcalc.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/MathCalc',
         description: 'It is a Math Calculator and its formulas',
         screenshot: 'https://screenshot-proxy.netlify.app/f_jpg,w_204/https://d33wubrfki0l68.cloudfront.net/608afad48957233fd2e6f53d/screenshot_2021-04-29-18-28-37-0000.png',
         createdAt: 2021,
@@ -66,7 +66,7 @@ export const projectsData = [
     {
         name: 'Transform Text',
         url: 'https://transformedtext.netlify.app',
-        source: '',
+        source: 'https://github.com/GuilhermeSousaDev/TransformedText',
         description: 'Customize your texts',
         screenshot: 'https://screenshot-proxy.netlify.app/f_jpg,w_204/https://d33wubrfki0l68.cloudfront.net/609bcb6371e2a4208306805d/screenshot_2021-05-12-12-34-45-0000.png',
         createdAt: 2021,
@@ -74,8 +74,8 @@ export const projectsData = [
     {
         name: 'Freelas',
         url: 'https://freelas.netlify.app',
-        source: '',
-        description: 'Beauty Website in Jquery',
+        source: 'https://github.com/GuilhermeSousaDev/Freelas',
+        description: 'Beautfull Website in Jquery',
         screenshot: 'https://screenshot-proxy.netlify.app/f_jpg,w_204/https://d33wubrfki0l68.cloudfront.net/60aa59978f6d993aa5b4cfcc/screenshot_2021-05-23-13-33-13-0000.png',
         createdAt: 2021,
     },

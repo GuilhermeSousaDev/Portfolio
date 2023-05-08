@@ -3,7 +3,6 @@ import { useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
 import LanguageIcon from "@mui/icons-material/Language";
 import DeveloperModeTwoToneIcon from "@mui/icons-material/DeveloperModeTwoTone";
 import StorageTwoToneIcon from "@mui/icons-material/StorageTwoTone";
@@ -86,7 +85,7 @@ export default function SkillsetBox({ skillName }: { skillName: ISkills }) {
           width: "275px",
           height: "200px",
         },
-        [theme.breakpoints.down(300)]: {
+        [theme.breakpoints.down(350)]: {
           width: "200px",
           height: "200px",
         },

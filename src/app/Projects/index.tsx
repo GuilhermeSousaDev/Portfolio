@@ -10,7 +10,15 @@ export default function Projects() {
 
   return (
     <Box>
-      <Typography color="text.primary" sx={{ mb: 5, fontSize: "48px", textAlign: "center" }}>
+      <Typography
+        color="text.primary"
+        sx={{
+          mb: 5,
+          fontSize: "48px",
+          textAlign: "center",
+          [theme.breakpoints.down(400)]: { fontSize: "30px" },
+        }}
+      >
         Projects
       </Typography>
       <Divider />

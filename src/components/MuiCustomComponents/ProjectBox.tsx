@@ -82,9 +82,13 @@ export default function ProjectBox({ project }: IProps) {
         <a href={project.url} target="_blank">
           <ProjectBoxButton isDarkTheme={isDarkTheme}>Demo</ProjectBoxButton>
         </a>
-        <a href={project.source} target="_blank">
-          <ProjectBoxButton isDarkTheme={isDarkTheme}>Source</ProjectBoxButton>
-        </a>
+        {project.source && (
+          <a href={project.source} target="_blank">
+            <ProjectBoxButton isDarkTheme={isDarkTheme}>
+              Source
+            </ProjectBoxButton>
+          </a>
+        )}
       </Box>
     </Box>
   );
