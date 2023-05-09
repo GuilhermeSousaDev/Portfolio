@@ -10,6 +10,7 @@ import DataObjectTwoToneIcon from "@mui/icons-material/DataObjectTwoTone";
 import Devicon from "../Devicon";
 import SkillModal from "./SkillModal";
 import { skillset } from "../../config/skillsetData";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 interface ISkillInfo {
   name: string;
@@ -42,6 +43,7 @@ const icon = (skillName: ISkills) => {
 
 export default function SkillsetBox({ skillName }: { skillName: ISkills }) {
   const theme = useTheme();
+  const isThemeDark = useAppSelector(state => state.theme.default) === 'dark';
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [skill, setSkill] = useState<ISkillInfo & { color: string }>();
@@ -63,6 +65,7 @@ export default function SkillsetBox({ skillName }: { skillName: ISkills }) {
 
   return (
     <Box
+      color="secondary"
       display="flex"
       flexDirection="column"
       justifyContent="center"
@@ -71,7 +74,7 @@ export default function SkillsetBox({ skillName }: { skillName: ISkills }) {
         width: "500px",
         height: "300px",
         mb: 5,
-        bgcolor: "#fff",
+        bgcolor: isThemeDark ? "#1f1f1f" : "#fff",
         textAlign: "center",
         borderRadius: "10px",
         border: "1px solid #525557",

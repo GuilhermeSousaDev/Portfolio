@@ -3,6 +3,7 @@ import Home from "./Home";
 import Skillset from "./Skillset";
 import AppBox from "../components/MuiCustomComponents/AppBox";
 import Projects from "./Projects";
+import Contact from "./Contact";
 
 export default function Main() {
   return (
@@ -11,6 +12,7 @@ export default function Main() {
         <Home />
         <Skillset />
         <Projects />
+        <Contact />
     </AppBox>
   );
 }

@@ -6,6 +6,9 @@ export const darkTheme = createTheme({
     primary: {
       main: '#5135F0',
     },
+    secondary: {
+      main: "#fff",
+    },
     text: {
       primary: '#5135F0',
       secondary: purple[200],
@@ -18,6 +21,9 @@ export const lightTheme = createTheme({
   palette: {
     primary: {
       main: '#E66D32',
+    },
+    secondary: {
+      main: "#000",
     },
     text: {
       primary: '#E66D32',

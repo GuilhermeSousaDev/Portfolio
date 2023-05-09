@@ -23,16 +23,22 @@ export default function Projects() {
       </Typography>
       <Divider />
       <Box
-        display="grid"
-        gap="1rem"
-        gridTemplateColumns="repeat(2, 1fr)"
-        justifyContent="center"
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="space-between"
+        gap="2rem"
         sx={{
           borderRadius: 3,
           mt: 5,
-          [theme.breakpoints.down(750)]: {
+          [theme.breakpoints.down(900)]: {
             display: "flex",
             flexDirection: "column",
+            justifyContent: "center"
+          },
+          [theme.breakpoints.down(350)]: {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           },
         }}
       >

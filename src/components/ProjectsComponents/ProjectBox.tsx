@@ -33,10 +33,9 @@ export default function ProjectBox({ project }: IProps) {
         borderRadius: "6px",
         padding: "1rem",
         height: "auto",
-        width: "400px",
-        [theme.breakpoints.down(850)]: { width: "100%" },
-        [theme.breakpoints.down(350)]: { width: "150px" },
-        [theme.breakpoints.between(750, 1000)]: { width: "300px" },
+        width: "300px",
+        [theme.breakpoints.down(900)]: { width: "100%" },
+        [theme.breakpoints.down(300)]: { width: "150px" },
       }}
     >
       <Typography

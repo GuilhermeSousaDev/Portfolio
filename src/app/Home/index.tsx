@@ -1,3 +1,4 @@
+import '../../index.css';
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Hobbies from "../../components/HomeComponents/Hobbies";

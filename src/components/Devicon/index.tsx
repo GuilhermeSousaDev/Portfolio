@@ -1,4 +1,5 @@
 import { Avatar, useTheme } from "@mui/material";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 type IProps = {
   iconName: string;
@@ -8,6 +9,7 @@ type IProps = {
 
 export default function Devicon({ iconName, color, onClick }: IProps) {
   const theme = useTheme();
+  const isThemeDark = useAppSelector(state => state.theme.default) === 'dark';
 
   return (
     <Avatar
@@ -15,8 +17,8 @@ export default function Devicon({ iconName, color, onClick }: IProps) {
       sx={{
         width: "58px",
         height: "58px",
-        bgcolor: "white",
-        border: "2px solid #adb5bd",
+        bgcolor: isThemeDark ? "#1f1f1f" : "#fff",
+        border: `2px solid ${isThemeDark ? "#383838" : "#adb5bd"}`,
         ml: "-15px",
         "&:hover": {
           border: `2px solid ${color === "#fff" ? "#5135F0" : color}`,
