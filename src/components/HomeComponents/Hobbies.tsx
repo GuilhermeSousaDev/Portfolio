@@ -15,7 +15,7 @@ export default function Hobbies() {
       <Typography color="text.secondary" variant="body1" sx={typographyStyle}>
         English
       </Typography>
-      <LinearProgressWithLabel value={30} />
+      <LinearProgressWithLabel value={20} />
       <Typography color="text.secondary" variant="body1" sx={typographyStyle}>
         Português-BR
       </Typography>
@@ -28,7 +28,7 @@ export default function Hobbies() {
         My Hobbies
       </Typography>
       <Divider />
-      <Typography color="text.secondary" variant="body2" sx={typographyStyle}>
+      <Typography color="text.disabled" variant="body2" sx={typographyStyle}>
         I really enjoy exercising my brain in various ways, such as reading
         books, playing chess, or solving logic tests. Additionally, I also enjoy
         physical activities like playing soccer and going to the gym to keep my
