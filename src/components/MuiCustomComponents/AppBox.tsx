@@ -23,7 +23,7 @@ export default function AppBox(props: IProps) {
         sx={{
           bgcolor: isDarkTheme ? "#151B21" : "#fff",
           border: "1px solid #333a41",
-          width: "90%",
+          width: "97%",
           height: "100%",
           pl: 10,
           pr: 10,
