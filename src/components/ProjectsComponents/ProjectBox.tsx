@@ -32,7 +32,7 @@ export default function ProjectBox({ project }: IProps) {
         bgcolor: variantTheme.bgcolor,
         borderRadius: "6px",
         padding: "1rem",
-        height: "auto",
+        height: "190px",
         width: "300px",
         [theme.breakpoints.down(900)]: { width: "100%" },
         [theme.breakpoints.down(300)]: { width: "150px" },

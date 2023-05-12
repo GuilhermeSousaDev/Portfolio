@@ -5,7 +5,7 @@ export default function AboutMe() {
     <>
       <Typography
         color="text.primary"
-        sx={{ typography: { xs: "h5", sm: "h3", md: "h2" } }}
+        sx={{ typography: { xs: "h4", sm: "h3", md: "h2" } }}
       >
         Hi, I'm Guilherme
       </Typography>
@@ -20,7 +20,7 @@ export default function AboutMe() {
         Fullstack Developer
       </Typography>
       <Typography
-        sx={{ typography: { xs: "body2", sm: "body1", md: "h6" }, mb: 8 }}
+        sx={{ typography: { xs: "body2", sm: "body1", md: "h6" }, mb: 10 }}
         color="text.disabled"
       >
         I am 18 years old and a programming student passionate about the world

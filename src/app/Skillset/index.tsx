@@ -5,7 +5,7 @@ import SkillsetBox from "../../components/SkillsetComponents/SkillsetBox";
 export default function Skillset() {
   return (
     <Box
-      sx={{ mt: 8 }}
+      sx={{ mt: 10 }}
       display="flex"
       flexDirection="column"
       justifyContent="center"

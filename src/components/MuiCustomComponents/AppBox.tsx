@@ -25,8 +25,8 @@ export default function AppBox(props: IProps) {
           border: "1px solid #333a41",
           width: "97%",
           height: "100%",
-          pl: 10,
-          pr: 10,
+          pl: 5,
+          pr: 5,
           pt: 3,
         }}
       >

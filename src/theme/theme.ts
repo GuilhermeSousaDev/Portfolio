@@ -14,7 +14,7 @@ export const darkTheme = createTheme({
       secondary: purple[200],
       disabled: purple[100],
     },
-  }
+  },
 });
 
 export const lightTheme = createTheme({

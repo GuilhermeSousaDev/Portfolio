@@ -52,7 +52,7 @@ export default function Contact() {
           </Box>
         </Box>
       </Box>
-      <Divider color={isThemeDark ? "#2c2c2c" : "#ddd"} sx={{ mt: 5, mb: 1 }} />
+      <Divider color={isThemeDark ? "#2c2c2c" : ""} sx={{ mt: 5, mb: 1 }} />
       <Typography sx={{ mb: -3 }} variant="body2" color="text.secondary">
         © 2023 Designed by GuilhermeSousaDev
       </Typography>

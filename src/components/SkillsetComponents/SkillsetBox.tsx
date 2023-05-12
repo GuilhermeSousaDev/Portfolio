@@ -113,14 +113,13 @@ export default function SkillsetBox({ skillName }: { skillName: ISkills }) {
       </Typography>
       <Box display="flex">
         {skillset[skillName].map((skill, i) => (
-          <>
+          <div key={i}>
             <Devicon
-              key={i}
               onClick={() => showSkillModal(skill.name)}
               color={skillsGroupColors[skillName][0]}
               iconName={skill.icon}
             />
-          </>
+          </div>
         ))}
       </Box>
     </Box>

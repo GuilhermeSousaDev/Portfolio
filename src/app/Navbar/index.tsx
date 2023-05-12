@@ -6,6 +6,8 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { changeDefaultTheme } from "../../store/ThemeSlice";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { animated } from "@react-spring/web";
+import img from '../../assets/img.jpeg';
 
 export default function Navbar() {
   const isThemeDark = useAppSelector(state => state.theme.default) === 'dark';
@@ -18,24 +20,26 @@ export default function Navbar() {
   }
 
   return (
-    <Box display="flex" justifyContent="space-between">
-      <Avatar color="#F0354A">G</Avatar>
-      <IconButton 
-        sx={{ 
-          borderRadius: '30%', 
-          bgcolor: variantTheme.bgcolor, 
-          border: `1px solid ${variantTheme.borderColor}`,
-          '&:hover': {
-            bgcolor: variantTheme.hoverBgColor,
+    <animated.div>
+      <Box display="flex" justifyContent="space-between">
+        <Avatar src={img} color="#F0354A" />
+        <IconButton
+          sx={{
+            borderRadius: '30%',
+            bgcolor: variantTheme.bgcolor,
+            border: `1px solid ${variantTheme.borderColor}`,
+            '&:hover': {
+              bgcolor: variantTheme.hoverBgColor,
+            }
+          }}
+          onClick={() => dispatch(changeDefaultTheme())}
+        >
+          {isThemeDark ?
+            <DarkModeIcon color="primary" /> :
+            <LightModeIcon />
           }
-        }} 
-        onClick={() => dispatch(changeDefaultTheme())}
-      >
-        { isThemeDark ? 
-          <DarkModeIcon color="primary" /> : 
-          <LightModeIcon /> 
-        }
-      </IconButton>
-    </Box>
+        </IconButton>
+      </Box>
+    </animated.div>
   );
 }

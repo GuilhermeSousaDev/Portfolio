@@ -1,19 +1,20 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
 import { projectsData } from "../../config/projectsData";
 import ProjectBox from "../../components/ProjectsComponents/ProjectBox";
 import { useTheme } from "@mui/material";
+import CustomDivider from "../../components/MuiCustomComponents/CustomDivider";
 
 export default function Projects() {
   const theme = useTheme();
 
   return (
-    <Box>
+    <Box sx={{ mb: 15 }}>
       <Typography
         color="text.primary"
         sx={{
-          mb: 5,
+          mb: 3,
+          mt: 10,
           fontSize: "48px",
           textAlign: "center",
           [theme.breakpoints.down(400)]: { fontSize: "30px" },
@@ -21,7 +22,7 @@ export default function Projects() {
       >
         Projects
       </Typography>
-      <Divider />
+      <CustomDivider />
       <Box
         display="flex"
         flexWrap="wrap"
