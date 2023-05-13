@@ -91,6 +91,25 @@ export let skillset = {
                 'Dynamic Types',
             ],
         },
+        {
+            name: 'Docker',
+            url: 'https://hub.docker.com',
+            icon: 'devicon-docker-plain-wordmark colored',
+            subskills: [
+              'Docker Compose'  
+            ],
+        },
+        {
+            name: 'GraphQL',
+            url: 'https://graphql.org/learn',
+            icon: 'devicon-graphql-plain-wordmark colored',
+            subskills: [
+                'Merge typeDefs',
+                'Merge resolvers',
+                'Authentication',
+                'DataSources',
+            ],
+        }
     ],
     mobile: [
         {

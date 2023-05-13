@@ -10,6 +10,7 @@ type IProps = {
 export default function Devicon({ iconName, color, onClick }: IProps) {
   const theme = useTheme();
   const isThemeDark = useAppSelector(state => state.theme.default) === 'dark';
+  const adjustBorderColorForContrastTheme = color === "#fff" ? "#5135F0": color === '#151B21' ? "gray" : color;
 
   return (
     <Avatar
@@ -21,13 +22,17 @@ export default function Devicon({ iconName, color, onClick }: IProps) {
         border: `2px solid ${isThemeDark ? "#383838" : "#adb5bd"}`,
         ml: "-15px",
         "&:hover": {
-          border: `2px solid ${color === "#fff" ? "#5135F0" : color}`,
+          border: `2px solid ${adjustBorderColorForContrastTheme}`,
           zIndex: 2,
           cursor: "pointer",
         },
         [theme.breakpoints.down(500)]: {
           width: "50px",
           height: "50px",
+        },
+        [theme.breakpoints.down(350)]: {
+          width: "40px",
+          height: "40px",
         },
       }}
     >

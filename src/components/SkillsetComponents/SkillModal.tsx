@@ -6,6 +6,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { useTheme } from "@mui/material";
 
 interface ISkillInfo {
   name: string;
@@ -23,6 +24,7 @@ type IProps = {
 };
 
 export default function SkillModal({ open, skill, onClose }: IProps) {
+  const theme = useTheme();
   const isThemeDark = useAppSelector((state) => state.theme.default) === "dark";
 
   const style = {
@@ -40,6 +42,9 @@ export default function SkillModal({ open, skill, onClose }: IProps) {
     boxShadow: 24,
     oveflow: "scroll",
     overflowX: "hidden",
+    borderRadius: "10px",
+    [theme.breakpoints.down(500)]: { width: 300 },
+    [theme.breakpoints.down(350)]: { width: 'auto' },
   };
 
   return (
