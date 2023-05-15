@@ -9,6 +9,7 @@ export default function Home() {
     <Box sx={{ mt: 10 }}>
       <AboutMe />
       <Hobbies />
+
       <CustomDivider />
     </Box>
   );

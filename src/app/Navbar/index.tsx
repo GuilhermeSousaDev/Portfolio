@@ -6,7 +6,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { changeDefaultTheme } from "../../store/ThemeSlice";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { animated } from "@react-spring/web";
+import { motion } from "framer-motion";
 import img from '../../assets/img.jpeg';
 
 export default function Navbar() {
@@ -20,9 +20,19 @@ export default function Navbar() {
   }
 
   return (
-    <animated.div>
-      <Box display="flex" justifyContent="space-between">
+    <Box display="flex" justifyContent="space-between">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
         <Avatar src={img} color="#F0354A" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <IconButton
           sx={{
             borderRadius: '30%',
@@ -39,7 +49,7 @@ export default function Navbar() {
             <LightModeIcon />
           }
         </IconButton>
-      </Box>
-    </animated.div>
+      </motion.div>
+    </Box>
   );
 }
