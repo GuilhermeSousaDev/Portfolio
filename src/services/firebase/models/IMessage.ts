@@ -1,7 +1,10 @@
 export interface IMessage {
-    id: string;
-    username: string;
-    message: string;
-    done: boolean;
-    likes: number;
+    key: string;
+    data: {
+        id: string;
+        username: string;
+        message: string;
+        done: boolean;
+        likes: number;
+    }
 }

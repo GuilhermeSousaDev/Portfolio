@@ -3,9 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-@font-face {
-    font-family: "Darumadrop_One";
-    src: local("Darumadrop_One"), url("../assets/fonts/Darumadrop_One/Darumadrop_One-Regular.ttf"), format("truetype");
-    font-weight: 500;
-    display: swap;
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
 }

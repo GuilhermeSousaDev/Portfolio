@@ -18,8 +18,10 @@ export const useFirebaseFind = ({ path, setState }: IProps) => {
 
             setState([]);
             if (snapshot.exists()) {
-                Object.values(data).map((newState) => {
-                    setState((prevState: any) => [...prevState, newState]);
+                Object.entries(data).map((newState) => {
+                    const key = newState[0];
+                    const val = newState[1];
+                    setState((prevState: any) => [...prevState, { key, data: val }]);
                 });
             }
         });
