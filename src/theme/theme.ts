@@ -14,6 +14,9 @@ export const darkTheme = createTheme({
       secondary: purple[200],
       disabled: purple[100],
     },
+    success: {
+      main: "#5135F0"
+    }
   },
 });
 
@@ -29,6 +32,9 @@ export const lightTheme = createTheme({
       primary: '#E66D32',
       secondary: grey[700],
       disabled: grey[800],
+    },
+    success: {
+      main: "#E66D32"
     }
   },
 });

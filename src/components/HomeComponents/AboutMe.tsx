@@ -8,6 +8,7 @@ export default function AboutMe() {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: true }}
       >
         <Typography
           color="text.primary"
@@ -20,6 +21,7 @@ export default function AboutMe() {
         initial={{ opacity: 0, transform: 'translateX(-100px)' }}
         animate={{ opacity: 1, transform: 'translateY(0)' }}
         transition={{ duration: 1, delay: 1 }}
+        viewport={{ once: true }}
       >
         <Typography
           color="text.secondary"
@@ -36,6 +38,7 @@ export default function AboutMe() {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
+        viewport={{ once: true }}
       >
         <Typography
           sx={{ typography: { xs: "body2", sm: "body1", md: "h6" }, mb: 10 }}

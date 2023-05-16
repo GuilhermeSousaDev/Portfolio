@@ -5,13 +5,15 @@ import LinearProgressWithLabel from "../../components/MuiCustomComponents/Linear
 import { motion } from "framer-motion";
 
 const typographyStyle = { mb: "1rem", mt: "1rem", width: "auto" };
+const windowWidth = window.innerWidth;
 
 export default function Hobbies() {
   return (
     <motion.div 
       initial={{ opacity: 0, transform: 'translateY(200px)' }}
-      animate={{ opacity: 1, transform: 'translateY(0)' }}
-      transition={{ duration: 1, delay: 2.5 }}
+      whileInView={{ opacity: 1, transform: 'translateY(0)' }}
+      transition={{ duration: 1, delay: windowWidth < 360 ? 0.1 : 2.5 }}
+      viewport={{ once: true }}
     >
       <Box>
         <Typography color="text.secondary" variant="h6" sx={{ mb: "1rem" }}>

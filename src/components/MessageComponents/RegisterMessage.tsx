@@ -2,36 +2,47 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import { useFirebaseCreate } from "../../services/firebase/hooks/useFirebaseCreate";
+import { showSnackbar } from "../../store/SnackbarSlice";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
 
 export default function RegisterMessage() {
+    const dispatch = useAppDispatch();
+
     const [username, setUsername] = useState('');
     const [message, setMessage] = useState('');
 
-    const handleSendMessageToDatabase = async () => {
-        if (message && username) {
-            useFirebaseCreate({
-                path: 'messages',
-                data: {
-                    username,
-                    message,
-                    likes: 0,
-                    done: false,
-                },
-            });
+    const handleSendMessageToDatabase = () => {
+        if (message) {
+            try {
+                useFirebaseCreate({
+                    path: 'messages',
+                    data: {
+                        username: username ? username : 'Anonymous',
+                        message,
+                        likes: 0,
+                        done: false,
+                    },
+                });
+                dispatch(showSnackbar({ 
+                    open: true,
+                    message: "Thank You for The Message",
+                    type: "success",
+                }));
+            } catch (error) {
+                dispatch(showSnackbar({
+                    open: true,
+                    message: "Error for Add Message",
+                    type: "error",
+                }));
+            }
             setMessage('');
             setUsername('');
-        } else if (message && !username) {
-            useFirebaseCreate({
-                path: 'messages',
-                data: {
-                    username: 'Anonymous',
-                    message,
-                    likes: 0,
-                    done: false,
-                },
-            });
-            setMessage('');
-            setUsername('');
+        } else {
+            dispatch(showSnackbar({
+                open: true,
+                message: "Fill in the fields to send the message",
+                type: "error",
+            }));
         }
     }
 

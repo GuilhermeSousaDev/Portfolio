@@ -35,7 +35,8 @@ export default function ProjectBox({ project }: IProps) {
         height: "190px",
         width: "300px",
         [theme.breakpoints.down(900)]: { width: "100%" },
-        [theme.breakpoints.down(300)]: { width: "150px" },
+        [theme.breakpoints.down(350)]: { width: "200px" },
+        [theme.breakpoints.down(280)]: { width: "150px" },
       }}
     >
       <Typography

@@ -1,11 +1,11 @@
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/storeTypes";
+import { useDispatch } from "react-redux";
 import { closeSnackbar } from "../../store/SnackbarSlice";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 export default function SnackbarApp() {
-    const snackbarStore = useSelector((state: RootState) => state.snackbar);
+    const snackbarStore = useAppSelector(state => state.snackbar);
     const dispatch = useDispatch();
 
     return (

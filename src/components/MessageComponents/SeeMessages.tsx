@@ -5,9 +5,9 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import LikeOffIcon from "@mui/icons-material/ThumbUpOffAlt";
 import LikeOnIcon from "@mui/icons-material/ThumbUpAlt";
+import { motion } from "framer-motion";
 import { IMessage } from "../../services/firebase/models/IMessage";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { increment } from "firebase/database";
@@ -56,10 +56,9 @@ export default function SeeMessages({ messages }: { messages: IMessage[] }) {
                 onClick={() => setIsShowedMessages(!isShowedMessages)}
                 sx={{ mt: 1, cursor: 'pointer' }}
             >
-                {!isShowedMessages ?
+                <motion.div animate={{ rotateZ: !isShowedMessages ? 0 : 180 }}>
                     <ArrowDropDownIcon color="primary" fontSize="large" />
-                    : <ArrowDropUpIcon color="primary" fontSize="large" />
-                }
+                </motion.div>
             </Box>
             {isShowedMessages &&
                 <List component={'div'}>
@@ -72,31 +71,37 @@ export default function SeeMessages({ messages }: { messages: IMessage[] }) {
                         }}
                     >
                         {messages.map((message: IMessage, i) => (
-                            <Box key={message.key} sx={{ mb: 2 }}>
-                                <ListItemText
-                                    primary={message.data.username}
-                                    secondary={message.data.message}
-                                    sx={{ color: isThemeDark ? "#5135F0" : "#E66D32" }}
-                                />
-                                <Box display="flex">
-                                    {!likedMessage.includes(i) ?
-                                        <LikeOffIcon
-                                            onClick={() => handleAddLikeInMessage(message.key, i)}
-                                            color="primary"
-                                            sx={{ cursor: "pointer" }}
-                                        />
-                                        :
-                                        <LikeOnIcon
-                                            onClick={() => handleRemoveLikeInMessage(message.key, i)}
-                                            color="primary"
-                                            sx={{ cursor: "pointer" }}
-                                        />
-                                    }
-                                    <Typography color="text.primary" sx={{ ml: 1 }}>
-                                        {message.data.likes}
-                                    </Typography>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ duration: 1 }}
+                            >
+                                <Box key={message.key} sx={{ mb: 2 }}>
+                                    <ListItemText
+                                        primary={message.data.username}
+                                        secondary={message.data.message}
+                                        sx={{ color: isThemeDark ? "#5135F0" : "#E66D32" }}
+                                    />
+                                    <Box display="flex">
+                                        {!likedMessage.includes(i) ?
+                                            <LikeOffIcon
+                                                onClick={() => handleAddLikeInMessage(message.key, i)}
+                                                color="primary"
+                                                sx={{ cursor: "pointer" }}
+                                            />
+                                            :
+                                            <LikeOnIcon
+                                                onClick={() => handleRemoveLikeInMessage(message.key, i)}
+                                                color="primary"
+                                                sx={{ cursor: "pointer" }}
+                                            />
+                                        }
+                                        <Typography color="text.primary" sx={{ ml: 1 }}>
+                                            {message.data.likes}
+                                        </Typography>
+                                    </Box>
                                 </Box>
-                            </Box>
+                            </motion.div>
                         ))}
                     </ListItem>
                 </List>

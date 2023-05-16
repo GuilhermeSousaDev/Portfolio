@@ -1,11 +1,10 @@
 import { AlertColor } from "@mui/material";
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface ISnackbarState {
     open: boolean;
     message: string;
     type: AlertColor;
-
 }
 
 const initialState = {
@@ -18,10 +17,10 @@ export const snackbarSlice = createSlice({
     name: 'snackbar',
     initialState,
     reducers: {
-        showSnackbar(state, { payload }) {
+        showSnackbar(state, { payload }: PayloadAction<ISnackbarState>) {
             state.open = true;
             state.message = payload.message;
-            state.type = payload.type as AlertColor;
+            state.type = payload.type;
         },
         closeSnackbar(state) {
             state.open = false;
