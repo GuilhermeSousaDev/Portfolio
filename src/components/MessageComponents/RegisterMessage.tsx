@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useFirebaseCreate } from "../../services/firebase/hooks/useFirebaseCreate";
 import { showSnackbar } from "../../store/SnackbarSlice";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { motion } from "framer-motion";
 
 export default function RegisterMessage() {
     const dispatch = useAppDispatch();
@@ -23,7 +24,7 @@ export default function RegisterMessage() {
                         done: false,
                     },
                 });
-                dispatch(showSnackbar({ 
+                dispatch(showSnackbar({
                     open: true,
                     message: "Thank You for The Message",
                     type: "success",
@@ -64,13 +65,15 @@ export default function RegisterMessage() {
                 sx={{ width: '50%', mt: 5, mb: 5 }}
                 onChange={(e) => setMessage(e.target.value)}
             />
-            <Button
-                variant="outlined"
-                color="primary"
-                onClick={handleSendMessageToDatabase}
-            >
-                Send
-            </Button>
+            <motion.div whileTap={{ scale: 0.8 }}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={handleSendMessageToDatabase}
+                >
+                    Send
+                </Button>
+            </motion.div>
         </>
     )
 }

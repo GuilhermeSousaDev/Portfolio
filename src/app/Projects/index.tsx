@@ -54,11 +54,12 @@ export default function Projects() {
         >
           {projectsData.map((project, index) => (
             <motion.div
+              key={index}
               initial={{ opacity: 0, transform: 'translateY(200px)' }}
               whileInView={{ opacity: 1, transform: 'translateY(0)' }}
               transition={{ 
                 duration: 1, 
-                delay: windowWidth < 900 ? 0.5 : index == 0 ? 0.1 : index - 0.5,
+                delay: 0.5,
               }}
               viewport={{ once: true }}
             >
@@ -67,7 +68,6 @@ export default function Projects() {
                 flexDirection="column"
                 justifyContent="center" 
                 alignItems="center"
-                key={index}
               >
                 <ProjectBox project={project} />
               </Box>

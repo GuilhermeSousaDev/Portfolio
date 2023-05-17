@@ -6,6 +6,7 @@ import LinkedinIcon from "@mui/icons-material/LinkedIn";
 import MailIcon from "@mui/icons-material/Mail";
 import { useTheme } from "@mui/material";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const theme = useTheme();
@@ -40,15 +41,24 @@ export default function Contact() {
             </Typography>
           </Box>
           <Box display="flex" gap="1rem" sx={{ mt: 1 }}>
-            <a href="https://github.com/GuilhermeSousaDev">
+            <motion.a 
+              href="https://github.com/GuilhermeSousaDev" 
+              whileHover={{ scale: 1.1 }}
+            >
               <GithubIcon color="primary" />
-            </a>
-            <a href="https://www.linkedin.com/in/guilherme-augusto-435420220">
+            </motion.a>
+            <motion.a 
+              href="https://www.linkedin.com/in/guilherme-augusto-435420220"
+              whileHover={{ scale: 1.1 }}
+            >
             <LinkedinIcon color="primary" />
-            </a>
-            <a href="mailto:a.guilhermerocha250@gmail.com">
+            </motion.a>
+            <motion.a 
+              href="mailto:a.guilhermerocha250@gmail.com" 
+              whileHover={{ scale: 1.1 }}
+            >
             <MailIcon color="primary" />
-            </a>
+            </motion.a>
           </Box>
         </Box>
       </Box>

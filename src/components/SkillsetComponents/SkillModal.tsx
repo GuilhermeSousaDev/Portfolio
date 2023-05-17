@@ -7,6 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useTheme } from "@mui/material";
+import { motion } from "framer-motion";
 
 interface ISkillInfo {
   name: string;
@@ -50,35 +51,47 @@ export default function SkillModal({ open, skill, onClose }: IProps) {
   return (
     <Modal open={open} onClose={onClose}>
       <Box sx={style}>
-        <a style={{ textDecoration: "none" }} href={skill.url}>
-          <Devicon
-            iconName={skill.icon}
-            color={skill.color}
-            onClick={() => null}
-          />
-        </a>
-        <Typography
-          variant="h5"
-          color="secondary"
-          sx={{ mb: 5, ml: "-15px", mt: 1 }}
+        <motion.div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1, duration: 1 }}
         >
-          {skill.name}
-        </Typography>
-        <Typography variant="h6" color="text.secondary">
-          Sub Skills
-        </Typography>
-        <List>
-          {skill.subskills
-            ? skill.subskills.map((subskill, i) => (
+          <a style={{ textDecoration: "none" }} href={skill.url}>
+            <Devicon
+              iconName={skill.icon}
+              color={skill.color}
+              onClick={() => null}
+            />
+          </a>
+          <Typography
+            variant="h5"
+            color="secondary"
+            sx={{ mb: 5, ml: "-15px", mt: 1 }}
+          >
+            {skill.name}
+          </Typography>
+          <Typography variant="h6" color="text.secondary">
+            Sub Skills
+          </Typography>
+          <List>
+            {skill.subskills
+              ? skill.subskills.map((subskill, i) => (
                 <ListItem key={i}>
                   <ListItemText
-                    sx={{ color: isThemeDark ? "#fff" : "#000" }}
+                    sx={{ color: isThemeDark ? "#fff" : "#000", textAlign: "center" }}
                     primary={subskill}
                   />
                 </ListItem>
               ))
-            : ""}
-        </List>
+              : ""}
+          </List>
+        </motion.div>
       </Box>
     </Modal>
   );

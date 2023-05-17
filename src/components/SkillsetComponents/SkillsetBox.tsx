@@ -11,6 +11,7 @@ import Devicon from "../Devicon";
 import SkillModal from "./SkillModal";
 import { skillset } from "../../config/skillsetData";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { motion } from "framer-motion";
 
 interface ISkillInfo {
   name: string;
@@ -113,13 +114,13 @@ export default function SkillsetBox({ skillName }: { skillName: ISkills }) {
       </Typography>
       <Box display="flex">
         {skillset[skillName].map((skill, i) => (
-          <div key={i}>
+          <motion.div key={i} whileTap={{ scale: 0.95 }}>
             <Devicon
               onClick={() => showSkillModal(skill.name)}
               color={skillsGroupColors[skillName][0]}
               iconName={skill.icon}
             />
-          </div>
+          </motion.div>
         ))}
       </Box>
     </Box>
