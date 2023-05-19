@@ -7,6 +7,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import DeveloperModeTwoToneIcon from "@mui/icons-material/DeveloperModeTwoTone";
 import StorageTwoToneIcon from "@mui/icons-material/StorageTwoTone";
 import DataObjectTwoToneIcon from "@mui/icons-material/DataObjectTwoTone";
+import ComputerIcon from "@mui/icons-material/Computer";
 import Devicon from "../Devicon";
 import SkillModal from "./SkillModal";
 import { skillset } from "../../config/skillsetData";
@@ -18,15 +19,16 @@ interface ISkillInfo {
   url: string;
   icon: string;
   subskills: string[];
-  isSelected: boolean;
+  isDeviconIcon: boolean;
 }
-type ISkills = "frontend" | "backend" | "mobile" | "database";
+type ISkills = "frontend" | "backend" | "mobile" | "database" | "others";
 
 const skillsGroupColors = {
   frontend: ["#fff", "#5135F0"],
   backend: ["#151B21", "gray"],
   mobile: ["#E66D32", "#fac6ad"],
   database: ["#F0354A", "#f7a6af"],
+  others: ["#993399", "#e0a9e0"],
 };
 
 const icon = (skillName: ISkills) => {
@@ -38,6 +40,7 @@ const icon = (skillName: ISkills) => {
       {skillName == "backend" && <DataObjectTwoToneIcon sx={propStyle} />}
       {skillName == "mobile" && <DeveloperModeTwoToneIcon sx={propStyle} />}
       {skillName == "database" && <StorageTwoToneIcon sx={propStyle} />}
+      {skillName == "others" && <ComputerIcon sx={propStyle} />}
     </>
   );
 };

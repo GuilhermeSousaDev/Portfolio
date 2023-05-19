@@ -34,7 +34,7 @@ export let skillset = {
         {
             name: 'React',
             url: 'https://pt-br.legacy.reactjs.org/docs/getting-started.html',
-            icon: 'devicon-react-original-wordmark colored',
+            icon: 'devicon-react-original colored',
             subskills: [
                 'Bootstrap',
                 'Material UI',
@@ -71,6 +71,7 @@ export let skillset = {
                 'Mongoose',
                 'Celebrate',
                 'Tsyringe',
+                'Socket.IO'
             ],
         },
          {
@@ -94,17 +95,9 @@ export let skillset = {
             ],
         },
         {
-            name: 'Docker',
-            url: 'https://hub.docker.com',
-            icon: 'devicon-docker-plain-wordmark colored',
-            subskills: [
-              'Docker Compose'  
-            ],
-        },
-        {
             name: 'GraphQL',
             url: 'https://graphql.org/learn',
-            icon: 'devicon-graphql-plain-wordmark colored',
+            icon: 'devicon-graphql-plain colored',
             subskills: [
                 'Merge typeDefs',
                 'Merge resolvers',
@@ -174,5 +167,31 @@ export let skillset = {
             url: 'https://redis.io/docs',
             icon: 'devicon-redis-plain colored',
         }
+    ],
+    others: [
+        {
+            name: 'Linux',
+            url: 'https://help.ubuntu.com',
+            icon: 'devicon-linux-plain colored',
+            subskills: [],
+        },
+        {
+            name: 'Git',
+            url: 'https://git-scm.com/doc',
+            icon: 'devicon-git-plain colored',
+            subskills: [
+                'Git Branch',
+                'Git Clone',
+                'Git Merge',
+            ]
+        },
+        {
+            name: 'Docker',
+            url: 'https://hub.docker.com',
+            icon: 'devicon-docker-plain colored',
+            subskills: [
+              'Docker Compose'  
+            ],
+        },
     ],
 }

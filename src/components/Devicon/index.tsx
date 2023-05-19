@@ -4,13 +4,14 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 type IProps = {
   iconName: string;
   color: string;
+  isDeviconIcon?: boolean;
   onClick: () => void;
 };
 
-export default function Devicon({ iconName, color, onClick }: IProps) {
+export default function Devicon({ iconName, color, isDeviconIcon, onClick }: IProps) {
   const theme = useTheme();
   const isThemeDark = useAppSelector(state => state.theme.default) === 'dark';
-  const adjustBorderColorForContrastTheme = color === "#fff" ? "#5135F0": color === '#151B21' ? "gray" : color;
+  const adjustBorderColorForContrastTheme = color === "#fff" ? "#5135F0" : color === '#151B21' ? "gray" : color;
 
   return (
     <Avatar

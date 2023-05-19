@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { useTheme } from "@mui/material";
 import { projectsData } from "../../config/projectsData";
 
-const windowWidth = window.innerWidth;
-
 export default function Projects() {
   const theme = useTheme();
 

@@ -1,7 +1,12 @@
 import Typography from "@mui/material/Typography";
 import { motion } from "framer-motion";
+import { Box, useTheme } from "@mui/material";
+
+const typographyStyle = { typography: { xs: "h4", sm: "h3", md: "h2" } };
 
 export default function AboutMe() {
+  const theme = useTheme();
+
   return (
     <>
       <motion.div
@@ -10,17 +15,33 @@ export default function AboutMe() {
         transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        <Typography
-          color="text.primary"
-          sx={{ typography: { xs: "h4", sm: "h3", md: "h2" } }}
-        >
-          Hi, I'm Guilherme
-        </Typography>
+        <Box display="flex" sx={{ [theme.breakpoints.down(500)]: { flexDirection: 'column' } }}>
+          <Typography
+            color="text.primary"
+            sx={[typographyStyle, { mr: 1.2 }]}
+          >
+            Hi I'm
+          </Typography>
+            <motion.div 
+              style={{ display: 'flex' }}
+              initial={{ width: 0 }}
+              animate={{ width: 300 }}
+              transition={{ delay: 1.5, duration: 1 }}
+            >
+              <Typography 
+                color="text.primary" 
+                sx={[typographyStyle, { overflow: 'hidden' }]}
+              >
+                Guilherme
+              </Typography>
+            </motion.div>
+          
+        </Box>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, transform: 'translateX(-100px)' }}
-        animate={{ opacity: 1, transform: 'translateY(0)' }}
-        transition={{ duration: 1, delay: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 2.5 }}
         viewport={{ once: true }}
       >
         <Typography
@@ -37,7 +58,7 @@ export default function AboutMe() {
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
+        transition={{ duration: 1, delay: 3 }}
         viewport={{ once: true }}
       >
         <Typography

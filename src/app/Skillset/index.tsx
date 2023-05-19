@@ -26,7 +26,7 @@ export default function Skillset() {
           variant="h6"
           sx={{ textAlign: "center", width: "auto", mb: 8, mt: 2 }}
         >
-          I organize my skills into four groups, which are the following
+          I organize my skills into five groups, which are the following
         </Typography>
         <Box
           display="flex"
@@ -38,6 +38,7 @@ export default function Skillset() {
           <SkillsetBox skillName="backend" />
           <SkillsetBox skillName="mobile" />
           <SkillsetBox skillName="database" />
+          <SkillsetBox skillName="others" />
         </Box>
       </Box>
     </motion.div>

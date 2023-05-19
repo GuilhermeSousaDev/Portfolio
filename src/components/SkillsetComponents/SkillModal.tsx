@@ -15,7 +15,7 @@ interface ISkillInfo {
   icon: string;
   color: string;
   subskills: string[];
-  isSelected: boolean;
+  isDeviconIcon: boolean;
 }
 
 type IProps = {

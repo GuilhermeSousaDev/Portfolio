@@ -42,7 +42,7 @@ export default function ProjectBox({ project }: IProps) {
       <Typography
         sx={{
           fontSize: "14.4px",
-          [theme.breakpoints.down(460)]: { fontSize: "9px" },
+          [theme.breakpoints.down(400)]: { fontSize: "9px" },
         }}
         color="text.primary"
       >
@@ -52,7 +52,7 @@ export default function ProjectBox({ project }: IProps) {
         sx={{
           fontSize: "17.6px",
           m: "1.6px 0px 8px",
-          [theme.breakpoints.down(460)]: { fontSize: "15px" },
+          [theme.breakpoints.down(400)]: { fontSize: "15px" },
         }}
         color={variantTheme.color}
       >
@@ -61,7 +61,7 @@ export default function ProjectBox({ project }: IProps) {
       <Typography
         sx={{
           fontSize: "14.4px",
-          [theme.breakpoints.down(460)]: { fontSize: "9px" },
+          [theme.breakpoints.down(400)]: { fontSize: "10px" },
         }}
         color={variantTheme.descriptionColor}
       >
