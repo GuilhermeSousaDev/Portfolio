@@ -1,0 +1,24 @@
+/* Light Theme */
+
+.reactMarkDownLight{
+    color: #000;
+}
+.reactMarkDownLight a {
+    color: #E66D32;
+}
+.reactMarkDownLight ul li::marker {
+    color: #E66D32
+}
+
+/* Dark Theme */
+
+.reactMarkDownDark{
+    color: #fff;
+}
+.reactMarkDownDark a {
+    color: #5135F0;
+}
+
+.reactMarkDownDark ul li::marker {
+    color: #5135F0;
+}

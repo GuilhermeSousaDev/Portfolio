@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function BlogLink() {
     const [isLinkHover, setIsLinkHover] = useState(false);
+    const pathname = window.location.pathname;
 
     return (
         <motion.div
@@ -15,12 +16,12 @@ export default function BlogLink() {
         >
             <Typography
                 component="a"
-                href="/blog"
+                href={ pathname === '/blog' ? '/' : '/blog' }
                 sx={{ textDecoration: 'none', cursor: 'pointer' }}
                 color="text.primary"
                 variant="h6"
             >
-                Blog
+                { pathname === '/blog' ? 'Porfolio' : 'Blog' }
                 <motion.div
                     style={{ height: '2px', background: 'purple' }}
                     animate={{ width: isLinkHover ? '100%' : '0%' }}
