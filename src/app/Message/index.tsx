@@ -4,7 +4,7 @@ import RegisterMessage from "../../components/MessageComponents/RegisterMessage"
 import SeeMessages from "../../components/MessageComponents/SeeMessages";
 import Introduction from "../../components/MessageComponents/Introduction";
 import { motion } from "framer-motion";
-import { useFirebaseFind } from "../../services/firebase/hooks/useFirebaseFInd";
+import { useFirebaseFind } from "../../services/firebase/hooks/useFirebaseFind";
 import { IMessage } from "../../services/firebase/models/IMessage";
 
 export default function Message() {

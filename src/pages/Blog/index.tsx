@@ -2,76 +2,50 @@ import { Box, Typography } from "@mui/material";
 import Navbar from "../../app/Navbar";
 import AppBox from "../../components/MuiCustomComponents/AppBox";
 import { Link } from "react-router-dom";
+import { useFirebaseFind } from "../../services/firebase/hooks/useFirebaseFind";
+import { useState } from "react";
 
-const posts = [
-    {
-        id: 1,
-        title: 'Using WebSockets in a Redux Application',
-        file: '',
-        createdAt: new Date(),
-    },
-    {
-        id: 2,
-        title: 'Using Fireabase in a React Application',
-        createdAt: new Date(new Date().setFullYear(2022)),
-    },
-    {
-        id: 3,
-        title: 'Using WebSockets in a Vuex Application',
-        createdAt: new Date(new Date().setFullYear(2022)),
-    },
-    {
-        id: 4,
-        title: 'Using WebSockets in a Vuex Application',
-        createdAt: new Date(new Date().setFullYear(2022)),
-    },
-    {
-        id: 5,
-        title: 'Using WebSockets in a Vuex Application',
-        createdAt: new Date(new Date().setFullYear(2021)),
-    },
-    {
-        id: 6,
-        title: 'Using WebSockets in a Vuex Application',
-        createdAt: new Date(new Date().setFullYear(2021)),
-    },
-    {
-        id: 7,
-        title: 'Using WebSockets in a Vuex Application',
-        createdAt: new Date(new Date().setFullYear(2020)),
-    },
-];
+interface IData {
+    title: string;
+    contentMarkdown: string;
+    createdAt: Date;
+    updatedAt: Date;
+}
 
-const obj = {} as { [key: number]: any }
-
-posts.every(post => obj[post.createdAt.getFullYear()] = []);
-
-posts.forEach(post => {
-    obj[post.createdAt.getFullYear()].push(post);
-});
-
-const sortFn = (a: any, b: any) => {
-    return Number(b[0]) - Number(a[0]);
+interface IPost {
+    key: string;
+    data: IData;
 }
 
 export default function Blog() {
+    const [posts, setPosts] = useState<IPost[]>([]);
+    const obj = {} as { [key: number]: any };
+
+    useFirebaseFind({ path: 'posts', setState: setPosts });
+
+    posts.every(post => obj[new Date(post.data.createdAt).getFullYear()] = []);
+
+    posts.forEach(post => {
+        obj[new Date(post.data.createdAt).getFullYear()].push(post);
+    });
+
     return (
         <AppBox>
             <Navbar />
             <Box display="flex" alignItems="flex-start" flexDirection="column" sx={{ mt: 10 }}>
                 <Typography sx={{ mb: 5 }} color="text.primary" variant="h3">Posts</Typography>
 
-                {Object.entries(obj).sort(sortFn).map(([year, yearPosts], index) => (
+                {Object.entries(obj).map(([year, yearPosts], index) => (
                     <Box key={index} sx={{ p: 1 }}>
                         <Typography sx={{ mb: 1 }} variant="h4" color="text.primary">{year}</Typography>
-                        {yearPosts.map((post: any) => (
-                            <Box key={post.id} display="flex" justifyContent="space-between">
-                                <Link to={`post/${post.id}`}>
+                        {yearPosts.map((post: { key: string, data: IData }) => (
+                            <Box key={post.key} display="flex" justifyContent="space-between">
+                                <Link to={`post/${post.key}`}>
                                     <Typography
                                         variant="body1"
                                         color="text.secondary"
                                     >
-                                        {post.title}
+                                        {post.data.title}
                                     </Typography>
                                 </Link>
                                 <Typography
@@ -79,13 +53,13 @@ export default function Blog() {
                                     color="text.disabled"
                                     sx={{ ml: 5, mr: 1 }}
                                 >
-                                    {post.createdAt.toLocaleDateString('en', { day: '2-digit' })}
+                                    {new Date(post.data.createdAt).toLocaleDateString('en', { day: '2-digit' })}
                                 </Typography>
                                 <Typography
                                     variant="body1"
                                     color="text.disabled"
                                 >
-                                    {post.createdAt.toLocaleDateString('en', { month: 'short' })}
+                                    {new Date(post.data.createdAt).toLocaleDateString('en', { month: 'short' })}
                                 </Typography>
                             </Box>
                         ))}
