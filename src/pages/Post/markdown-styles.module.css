@@ -2,6 +2,7 @@
 
 .reactMarkDownLight{
     color: #000;
+    line-break: auto;
 }
 .reactMarkDownLight a {
     color: #E66D32;
@@ -14,6 +15,7 @@
 
 .reactMarkDownDark{
     color: #fff;
+    line-break: auto;
 }
 .reactMarkDownDark a {
     color: #5135F0;

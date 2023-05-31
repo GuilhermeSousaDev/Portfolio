@@ -4,7 +4,7 @@ import { app } from "..";
 
 interface IProps {
     path: string;
-    setState: React.Dispatch<React.SetStateAction<any[]>>;
+    setState: React.Dispatch<React.SetStateAction<any[] | any>>;
 }
 
 export const useFirebaseFind = ({ path, setState }: IProps) => {

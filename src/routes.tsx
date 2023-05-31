@@ -10,7 +10,7 @@ export default function Router() {
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/post/:id" element={<Post />} />
+                <Route path="/blog/post/:postKey" element={<Post />} />
             </Routes>
             <SnackbarApp />
         </BrowserRouter>
