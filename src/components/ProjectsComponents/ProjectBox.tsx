@@ -32,9 +32,15 @@ export default function ProjectBox({ project }: IProps) {
         bgcolor: variantTheme.bgcolor,
         borderRadius: "6px",
         padding: "1rem",
-        height: "190px",
+        height: "400px",
         width: "300px",
-        [theme.breakpoints.down(900)]: { width: "100%" },
+        [theme.breakpoints.down(900)]: { 
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center"
+        },
         [theme.breakpoints.down(350)]: { width: "200px" },
         [theme.breakpoints.down(280)]: { width: "150px" },
       }}
@@ -58,6 +64,18 @@ export default function ProjectBox({ project }: IProps) {
       >
         {project.name}
       </Typography>
+      <Box 
+        component="img" 
+        src={project.screenshot} 
+        sx={{ 
+          width: 200, 
+          m: "1.6px 0px 8px", 
+          borderRadius: "6px",
+          [theme.breakpoints.down(400)]: {
+            width: '80%',
+          }
+        }}
+      ></Box>
       <Typography
         sx={{
           fontSize: "14.4px",

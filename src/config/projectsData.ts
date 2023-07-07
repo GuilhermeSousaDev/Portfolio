@@ -1,5 +1,13 @@
 export const projectsData = [
     {
+        name: 'Tasks IO',
+        url: 'https://tasksio.netlify.app',
+        source: 'https://github.com/GuilhermeSousaDev/Simple-Todo-List',
+        description: 'Charming Simple Todo List',
+        screenshot: 'https://screenshot-proxy.netlify.app/f_avif,w_204/https://d33wubrfki0l68.cloudfront.net/64405835522a9e32b2bbdd1a/screenshot_2023-04-19-21-08-08-0000.png',
+        createdAt: 2023,
+    },
+    {
         name: 'Fullstack News',
         url: 'https://fullstack-news.netlify.app',
         source: 'https://github.com/GuilhermeSousaDev/Fullstack_Project_Frontend',

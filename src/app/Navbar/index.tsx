@@ -7,7 +7,6 @@ export default function Navbar() {
   return (
     <Box display="flex" justifyContent="space-between">
       <MyAvatarImage />
-      <BlogLink />
       <ThemeModeButton />
     </Box>
   );
